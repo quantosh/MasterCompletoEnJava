@@ -1,29 +1,31 @@
+package Poo;
+
 public class EjemploAutomovilStatic {
     public static void main(String[] args) {
 
 
 
-        // Instancio objeto Automovil Subaru
-        Automovil subaru = new Automovil("Subaru","Impreza" ,Color.BLANCO, 1.8, 60);
+        // Instancio objeto Poo.Automovil Subaru
+        Automovil subaru = new Automovil("Subaru","Impreza" , Color.BLANCO, 1.8, 60);
         subaru.setTipo(TipoAutomovil.HATCHBACK);
 
-        // Instancio objeto Automovil Mazda
+        // Instancio objeto Poo.Automovil Mazda
         Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, 3.2, 40);
         mazda.setTipo(TipoAutomovil.PICKUP);
-        // Instancio objeto Automovil Nissan
+        // Instancio objeto Poo.Automovil Nissan
         Automovil nissan = new Automovil("Nissan","Navara", Color.GRIS, 4.2, 65);
         nissan.setTipo(TipoAutomovil.PICKUP);
 
         /*
-        // Instancio objeto Automovil vacío
-        Automovil fiat = new Automovil();
+        // Instancio objeto Poo.Automovil vacío
+        Poo.Automovil fiat = new Poo.Automovil();
          */
 
         // 141. Modificando atributo estatico
-        // fiat.colorPatente = "rojo"; // Modifica el atributo static para todos los obj de la clase Automovil
-        // Automovil.setColorPatente(Color.NARANJO); // Modifica el atributo solo para el vehiculo en concreto
+        // fiat.colorPatente = "rojo"; // Modifica el atributo static para todos los obj de la clase Poo.Automovil
+        // Poo.Automovil.setColorPatente(Poo.Color.NARANJO); // Modifica el atributo solo para el vehiculo en concreto
 
-        // 140. toString - Si llamas directamente al objeto imprimira el nombre de la clase @ con su "hashcode" ej: Automovil@2f4d3709
+        // 140. toString - Si llamas directamente al objeto imprimira el nombre de la clase @ con su "hashcode" ej: Poo.Automovil@2f4d3709
         System.out.println(subaru.toString());
         System.out.println(mazda.toString());
         System.out.println(nissan.toString());

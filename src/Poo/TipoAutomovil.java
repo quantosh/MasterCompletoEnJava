@@ -1,3 +1,5 @@
+package Poo;
+
 public enum TipoAutomovil {
     SEDAN("Sedan", 4 , "Auto normal"),
     STATION_WAGON("Station Wagon", 5 , "Auto mediano"),

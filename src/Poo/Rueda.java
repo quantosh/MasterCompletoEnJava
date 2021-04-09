@@ -1,3 +1,5 @@
+package Poo;
+
 public class Rueda {
     private String fabricante;
     private int aro;

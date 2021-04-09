@@ -1,3 +1,5 @@
+package Poo;
+
 public class Motor {
     private double cilindrada;
     private TipoMotor motor;

@@ -1,3 +1,5 @@
+package Poo;
+
 public class Automovil {
     // Por estandar una clase viene ordenada de la siguiente manera
     // Atributos, constructor, getter & setters y luego los métodos
@@ -45,7 +47,7 @@ public class Automovil {
     public static final String COLOR_BLANCO = "Blanco";
     public static final String COLOR_GRIS = "Gris Oscuro";
 
-    // 145 Enumerador Color (enum)
+    // 145 Enumerador Poo.Color (enum)
 
     // Modificadores éstaticos
     public static Color colorPatente = Color.NARANJO;
@@ -115,11 +117,17 @@ public class Automovil {
     }
 
     public float calcularConsumo(int km, float porcentajeBencina){
-        return km/(Estanque*porcentajeBencina);
+        return km/(this.estanque.getCapacidad()*porcentajeBencina);
     }
     // sobrecarga de método, mismo nombre pero diferente tipo de dato
     public float calcularConsumo(int km, int porcentajeBencina){
-        return km/(capacidadEstanque*(porcentajeBencina/100f));
+        return km/(this.estanque.getCapacidad()*(porcentajeBencina/100f));
+    }
+
+    public Automovil(String fabricante, String modelo, Color color, Motor motor, Estanque estanque, Persona conductor, Rueda[] ruedas) {
+        this(fabricante, modelo, color, motor, estanque);
+        this.conductor = conductor;
+        this.ruedas = ruedas;
     }
 
     // Click derecho -> 'Override Methods...' Ctrl + O
@@ -144,7 +152,7 @@ public class Automovil {
     @Override // Sobreescribimos un método padre
     // Esto se utiliza para representar el objeto como texto
     public String toString() {
-        return "Automovil{" +
+        return "Poo.Automovil{" +
                 "id='" + this.id + '\'' +
                 ", fabricante='" + fabricante + '\'' +
                 ", modelo='" + modelo + '\'' +

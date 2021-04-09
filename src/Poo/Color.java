@@ -1,5 +1,7 @@
+package Poo;
+
 public enum Color {
-    // 145. Enumerador Color (enum)
+    // 145. Enumerador Poo.Color (enum)
     // Queda más organizado con un enum
     // toString es para dar una representación a cada constante
 

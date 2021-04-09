@@ -1,12 +1,17 @@
+package Poo;
+
 public class EjemploAutomovilEnum {
     public static void main(String[] args) {
 
-        // Instancio objeto Automovil Subaru
-        Automovil subaru = new Automovil("Subaru","Impreza" ,Color.BLANCO, 1.8, 60);
+        // Instancio objeto Poo.Automovil Subaru
+        Motor motorSubaru = new Motor(2.0, TipoMotor.BENCINA);
+        Automovil subaru = new Automovil("Subaru","Impreza" ,Color.BLANCO, motorSubaru);
         subaru.setTipo(TipoAutomovil.HATCHBACK);
+        subaru.setEstanque(new Estanque());
 
-        // Instancio objeto Automovil Mazda
-        Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, 3.2, 40);
+        // Instancio objeto Poo.Automovil Mazda
+        Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, new Motor(3.0, TipoMotor.DIESEL));
+        mazda.setEstanque(new Estanque(45));
         mazda.setTipo(TipoAutomovil.PICKUP);
 
         // 147 Utilizando enum con sentencias switch case

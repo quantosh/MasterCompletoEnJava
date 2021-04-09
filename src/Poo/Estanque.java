@@ -1,3 +1,5 @@
+package Poo;
+
 public class Estanque {
     private int capacidad;
 

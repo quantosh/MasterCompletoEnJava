@@ -1,3 +1,5 @@
+package Poo;
+
 import java.util.Date;
 
 public class EjemploAutomovil {
@@ -5,20 +7,24 @@ public class EjemploAutomovil {
         // 139 Importamos fecha para comprar valores diferentes
         Date fecha = new Date();
 
-        // Instancio objeto Automovil Subaru
-        Automovil subaru = new Automovil("Subaru","Impreza" ,Color.BLANCO, 1.8, 60);
+        // Instancio objeto Poo.Automovil Subaru
+        Motor motorSubaru = new Motor(2.0, TipoMotor.BENCINA);
+        Automovil subaru = new Automovil("Subaru","Impreza" ,Color.BLANCO, motorSubaru);
+        subaru.setTipo(TipoAutomovil.HATCHBACK);
+        subaru.setEstanque(new Estanque(50));
 
-        // Instancio objeto Automovil Mazda
-        Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, 3.2, 40);
+        // Instancio objeto Poo.Automovil Mazda
 
+        Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, new Motor(3.0, TipoMotor.DIESEL));
+        mazda.setEstanque(new Estanque(45));
         // Instancio objeto sin parametros gracias al constructor vacío
         Automovil ford = new Automovil();
 
-        // Instancio objeto Automovil Nissan
-        Automovil nissan = new Automovil("Nissan","Almera", Color.GRIS, 4.2, 65);
+        // Instancio objeto Poo.Automovil Nissan
+        Automovil nissan = new Automovil("Nissan","Almera", Color.GRIS, new Motor(4.0, TipoMotor.DIESEL), new Estanque(97));
 
         // Comprobando que cada objeto es único aunque sea igual
-        Automovil nissan2 = new Automovil("Nissan","Almera", Color.GRIS, 4.2, 65);
+        Automovil nissan2 = new Automovil("Nissan","Almera", Color.GRIS, new Motor(3.5, TipoMotor.BENCINA), new Estanque(67));
 
         // 139. Comprobando que cada objeto es único aunque sea igual
         Automovil fiat = new Automovil();
@@ -38,7 +44,7 @@ public class EjemploAutomovil {
         System.out.println(fiat.equals(nissan));
         System.out.println("¿Son equals subaru y fecha u otro? " + subaru.equals(fecha));
 
-        // 140. toString - Si llamas directamente al objeto imprimira el nombre de la clase @ con su "hashcode" ej: Automovil@2f4d3709
+        // 140. toString - Si llamas directamente al objeto imprimira el nombre de la clase @ con su "hashcode" ej: Poo.Automovil@2f4d3709
         System.out.println(subaru.toString());
 
     }
