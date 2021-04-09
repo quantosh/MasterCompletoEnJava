@@ -13,6 +13,7 @@ public class Automovil {
     private Estanque estanque;
     private Persona conductor;
     private Rueda[] ruedas;
+    private int indiceruedas;
 
     // 151
 
@@ -55,6 +56,7 @@ public class Automovil {
     // public Au
     public Automovil(){
         this.id = ++ultimoId;
+        this.ruedas = new Rueda[5];
     }
 
     // Constructor, prepara el objeto para poder ser usado
@@ -152,16 +154,23 @@ public class Automovil {
     @Override // Sobreescribimos un método padre
     // Esto se utiliza para representar el objeto como texto
     public String toString() {
-        return "Poo.Automovil{" +
-                "id='" + this.id + '\'' +
-                ", fabricante='" + fabricante + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", color='" + color.getColor() + '\'' +
-                ", cilindrada=" + this.motor.getCilindrada() +
-                ", modelo=" + this.getTipo().getDescripcion() +
-                ", capacidadEstanque=" + this.estanque.getCapacidad() +
-                ", colorPatente=" + colorPatente.getColor() +
-                '}';
+        System.out.println();
+        String detalle =
+                            "\nAuto con id= " + this.id +
+                            "\nFabricante= " + this.getFabricante() +
+                            "\nModelo= " + this.getModelo();
+        if(this.getTipo() != null){
+                detalle += "\nTipo= " + this.getTipo().getDescripcion();
+        }
+                detalle +=  "\nColor= " + color.getColor() +
+                            "\nCapacidadEstanque= " + this.estanque.getCapacidad() +
+                            "\nColorPatente= " + colorPatente.getColor();
+
+                // Si es null
+                if(this.motor != null){
+                    detalle +=  "\nCilindrada=" + this.motor.getCilindrada();
+                }
+        return detalle;
     }
 
     // 151
@@ -176,6 +185,11 @@ public class Automovil {
     }
 
     public Estanque getEstanque() {
+        // Asigna por defecto para evitar los nullpointer exception
+        if(estanque == null){
+            int capacidadPorDefecto = 40;
+            this.estanque = new Estanque(capacidadPorDefecto);
+        }
         return estanque;
     }
 
@@ -197,6 +211,11 @@ public class Automovil {
 
     public void setRuedas(Rueda[] ruedas) {
         this.ruedas = ruedas;
+    }
+
+    // 154
+    public void addRueda(Rueda rueda){
+        this.ruedas[indiceruedas++] = rueda;
     }
 
     // 141

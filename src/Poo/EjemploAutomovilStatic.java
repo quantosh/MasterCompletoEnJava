@@ -3,17 +3,18 @@ package Poo;
 public class EjemploAutomovilStatic {
     public static void main(String[] args) {
 
-
-
         // Instancio objeto Poo.Automovil Subaru
-        Automovil subaru = new Automovil("Subaru","Impreza" , Color.BLANCO, 1.8, 60);
+        Motor motorSubaru = new Motor(2.0, TipoMotor.BENCINA);
+        Automovil subaru = new Automovil("Subaru","Impreza" ,Color.BLANCO, motorSubaru);
         subaru.setTipo(TipoAutomovil.HATCHBACK);
+        subaru.setEstanque(new Estanque());
 
         // Instancio objeto Poo.Automovil Mazda
-        Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, 3.2, 40);
+        Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, new Motor(3.0, TipoMotor.DIESEL));
+        mazda.setEstanque(new Estanque(45));
         mazda.setTipo(TipoAutomovil.PICKUP);
         // Instancio objeto Poo.Automovil Nissan
-        Automovil nissan = new Automovil("Nissan","Navara", Color.GRIS, 4.2, 65);
+        Automovil nissan = new Automovil("Nissan","Navara", Color.GRIS, new Motor(6.0, TipoMotor.BENCINA), new Estanque(66));
         nissan.setTipo(TipoAutomovil.PICKUP);
 
         /*

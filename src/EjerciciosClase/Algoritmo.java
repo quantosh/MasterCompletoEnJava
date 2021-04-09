@@ -3,6 +3,7 @@ package EjerciciosClase;
 
 public class Algoritmo {
     public static void main(String[] args) {
+        // Valores génericos
         class Gen<T>{
 
         }
@@ -12,5 +13,6 @@ public class Algoritmo {
         }
     }
 }
+*/
 
- */
+
