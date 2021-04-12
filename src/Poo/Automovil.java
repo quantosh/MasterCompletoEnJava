@@ -1,6 +1,7 @@
 package Poo;
 
-public class Automovil {
+// 155 implementando el método comparar con
+public class Automovil implements Comparable<Automovil>{
     // Por estandar una clase viene ordenada de la siguiente manera
     // Atributos, constructor, getter & setters y luego los métodos
     private int id;
@@ -57,6 +58,11 @@ public class Automovil {
     public Automovil(){
         this.id = ++ultimoId;
         this.ruedas = new Rueda[5];
+    }
+
+    public Automovil(String fabricante, String modelo) {
+        this.fabricante = fabricante;
+        this.modelo = modelo;
     }
 
     // Constructor, prepara el objeto para poder ser usado
@@ -157,13 +163,14 @@ public class Automovil {
         System.out.println();
         String detalle =
                             "\nAuto con id= " + this.id +
+                            "\nConductor= " + this.conductor +
                             "\nFabricante= " + this.getFabricante() +
                             "\nModelo= " + this.getModelo();
         if(this.getTipo() != null){
                 detalle += "\nTipo= " + this.getTipo().getDescripcion();
         }
                 detalle +=  "\nColor= " + color.getColor() +
-                            "\nCapacidadEstanque= " + this.estanque.getCapacidad() +
+                            "\nCapacidadEstanque= " + this.getEstanque().getCapacidad() +
                             "\nColorPatente= " + colorPatente.getColor();
 
                 // Si es null
@@ -197,6 +204,7 @@ public class Automovil {
         this.estanque = estanque;
     }
 
+
     public Persona getConductor() {
         return conductor;
     }
@@ -225,5 +233,10 @@ public class Automovil {
 
     public static void setColorPatente(Color colorPatente) {
         Automovil.colorPatente = colorPatente;
+    }
+
+    // 155 Implementando comparable
+    public int compareTo(Automovil a) {
+        return this.conductor.toString().compareTo(a.conductor.toString());
     }
 }

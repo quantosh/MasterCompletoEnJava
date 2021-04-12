@@ -1,5 +1,6 @@
 package Poo;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class EjemploAutomovilArreglo {
@@ -10,7 +11,9 @@ public class EjemploAutomovilArreglo {
         Persona conductorSubaru = new Persona("Luci", "Martinez");
         Persona conductorMazda = new Persona("Pato", "Rodriguez");
         Persona tass = new Persona("Tass", "Wass");
+        Persona weans = new Persona("Weans", "Yeans");
         Persona lalo = new Persona("Lalo", "ElKalo");
+        Persona beans = new Persona("Beans", "ElCholo");
         // 139 Importamos fecha para comprar valores diferentes
         Date fecha = new Date();
 
@@ -21,45 +24,32 @@ public class EjemploAutomovilArreglo {
         subaru.setEstanque(new Estanque(50));
         subaru.setConductor(conductorSubaru);
         subaru.setRuedas(ruedasSub);
+        subaru.setConductor(beans);
 
-        // Instancio objeto Poo.Automovil Mazda
+        Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, new Motor(3.0, TipoMotor.DIESEL),new Estanque(45));
+        mazda.setConductor(weans);
 
-        Rueda[] ruedasMaz = new Rueda[5];
+        Automovil nissan = new Automovil("Nissan","Almera", Color.GRIS, new Motor(4.0, TipoMotor.DIESEL), new Estanque(97));
+        nissan.setConductor(lalo);
 
-        Automovil mazda = new Automovil("Mazda", "BT-50", Color.ROJO, new Motor(3.0, TipoMotor.DIESEL),new Estanque(45), tass, ruedasMaz);
-        mazda.setEstanque(new Estanque(999));
+        Automovil suzuki = new Automovil("Suzuki","Vitara", Color.GRIS, new Motor(1.7, TipoMotor.BENCINA), new Estanque(67));
+        suzuki.setConductor(tass);
+        suzuki.setTipo(TipoAutomovil.SUV);
 
+        Automovil audi = new Automovil("Audi", "A3");
+        audi.setConductor(new Persona("Pepe", "Mujica"));
 
+        Automovil[] autos = new Automovil[5];
+        autos[0] = subaru;
+        autos[1] = mazda;
+        autos[2] = nissan;
+        autos[3] = suzuki;
+        autos[4] = audi;
 
-        // Instancio objeto sin parametros gracias al constructor vacío
-        Automovil ford = new Automovil();
-        mazda.setConductor(conductorMazda);
+        Arrays.sort(autos);
 
-
-        Rueda[] ruedasNissan = new Rueda[5];
-        // Instancio objeto Poo.Automovil Nissan
-        Automovil nissan = new Automovil("Nissan","Almera", Color.GRIS, new Motor(4.0, TipoMotor.DIESEL), new Estanque(97), lalo, ruedasNissan);
-
-        // Comprobando que cada objeto es único aunque sea igual
-
-        Automovil nissan2 = new Automovil("Nissan","Almera", Color.GRIS, new Motor(3.5, TipoMotor.BENCINA), new Estanque(67), tass, ruedasNissan);
-
-        // Añadiendo ruedas con el método add
-
-        for(int i = 0; i < ruedasMaz.length; i++){
-            mazda.addRueda(new Rueda("Yokohama", 15, 12.5));
+        for (int i = 0; i < autos.length; i++){
+            System.out.println(autos[i]);
         }
-
-        for(int i = 0; i < ruedasSub.length; i++){
-            subaru.addRueda(new Rueda("Michelin", 17, 10.5));
-        }
-
-        for(int i = 0; i < ruedasNissan.length; i++){
-            nissan.addRueda(new Rueda("Pirelli", 20, 11.5));
-        }
-
-        System.out.println(mazda.toString());
-        System.out.println("Conductor Mazda: " + mazda.getConductor());
-        System.out.println(mazda.getRuedas().toString());
     }
 }
