@@ -85,16 +85,17 @@ public class Factura {
         for (ItemFactura item: this.items)
         {
             if(item == null){
-                sb.append(item.getProducto().getCodigo())
-                        .append("\t")
-                        .append(item.getProducto().getNombre())
-                        .append("\t")
-                        .append(item.getProducto().getPrecio())
-                        .append(item.getCantidad())
-                        .append("\t")
-                        .append(item.calcularImporte())
-                        .append("\n");
+                continue;
             }
+            sb.append(item.getProducto().getCodigo())
+                    .append("\t")
+                    .append(item.getProducto().getNombre())
+                    .append("\t")
+                    .append(item.getProducto().getPrecio())
+                    .append(item.getCantidad())
+                    .append("\t")
+                    .append(item.calcularImporte())
+                    .append("\n");
         }
         sb.append("\nGran total: ")
                 .append(calcularTotal());

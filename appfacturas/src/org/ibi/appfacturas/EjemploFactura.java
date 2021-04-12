@@ -38,6 +38,7 @@ public class EjemploFactura {
             cantidad = scan.nextInt();
 
             ItemFactura item = new ItemFactura(cantidad, producto);
+            factura.addItemFactura(item);
 
             System.out.println();
         }
