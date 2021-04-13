@@ -2,10 +2,10 @@ package es.quantosh.pooherencia;
 
 // Persona no hereda de nadie, pero si esta heredando de 'Object' su clase padre, de forma indirecta
 public class Persona {
-    private String nombre;
-    private String apellido;
-    private int edad;
-    private String email;
+    protected String nombre;
+    protected String apellido;
+    protected int edad;
+    protected String email;
 
     public String getNombre() {
         return nombre;

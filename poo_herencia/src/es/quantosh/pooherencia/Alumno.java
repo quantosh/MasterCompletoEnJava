@@ -4,9 +4,8 @@ package es.quantosh.pooherencia;
 public class Alumno extends Persona{
     // Hereda los atributos de persona
     private String instituto;
-    private double notaMatematica;
-    private double notaCastellano;
-    private double notaHistoria;
+    private double notaEntornos;
+    private double notaProgramacion;
 
     public String getInstituto() {
         return instituto;
@@ -16,27 +15,19 @@ public class Alumno extends Persona{
         this.instituto = instituto;
     }
 
-    public double getNotaMatematica() {
-        return notaMatematica;
+    public double getNotaEntornos() {
+        return notaEntornos;
     }
 
-    public void setNotaMatematica(double notaMatematica) {
-        this.notaMatematica = notaMatematica;
+    public void setNotaEntornos(double notaEntornos) {
+        this.notaEntornos = notaEntornos;
     }
 
-    public double getNotaCastellano() {
-        return notaCastellano;
+    public double getNotaProgramacion() {
+        return notaProgramacion;
     }
 
-    public void setNotaCastellano(double notaCastellano) {
-        this.notaCastellano = notaCastellano;
-    }
-
-    public double getNotaHistoria() {
-        return notaHistoria;
-    }
-
-    public void setNotaHistoria(double notaHistoria) {
-        this.notaHistoria = notaHistoria;
+    public void setNotaProgramacion(double notaProgramacion) {
+        this.notaProgramacion = notaProgramacion;
     }
 }
