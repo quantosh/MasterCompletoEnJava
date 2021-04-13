@@ -61,10 +61,13 @@ public class Factura {
 
     public float calcularTotal() {
         float total = 0.0f;
-        for (ItemFactura item : this.items) {
+        for (int i = 0; i < indiceItems; i++) {
+            ItemFactura item = this.items[i]; // optimizado con for antes era for each
+            /*
             if (item == null) { // o !item instanceof ItemFactura <- pero mejor no
                 continue; // evitando nullpointerexception
             }
+            */
             total += item.calcularImporte();
         }
         return total;
@@ -76,17 +79,16 @@ public class Factura {
                 .append("\nCliente: " + cliente.getNombre())
                 .append("\tNIF: " + cliente.getNif())
                 .append("\nDescripción: " + this.descripcion)
-                .append("\n")
-                .append("\n#\tNombre\t$\tCant.\tTotal\n");
+                .append("\n");
         SimpleDateFormat df = new SimpleDateFormat("dd 'de' MMMM yyyy");
         sb.append("Fecha emisión: ")
-                .append(df.format(this.fecha)).append("\n");
+                .append(df.format(this.fecha)).append("\n")
+                .append("\n#\tNombre\t$\tCant.\tTotal\n");
 
-        for (ItemFactura item: this.items)
-        {
-            if(item == null){
-                continue;
-            }
+        for (int i = 0; i < indiceItems; i++) {
+            ItemFactura item = this.items[i];
+            // Se puede eliminar esta parte utilizando los toString de producto e item
+            // Pero quería utilizar un StringBuilder para practicarlo
             sb.append(item.getProducto().getCodigo())
                     .append("\t")
                     .append(item.getProducto().getNombre())
@@ -101,5 +103,10 @@ public class Factura {
                 .append(calcularTotal());
 
         return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        return generarDetalle();
     }
 }

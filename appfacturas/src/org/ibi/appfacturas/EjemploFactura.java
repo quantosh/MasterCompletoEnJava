@@ -3,7 +3,7 @@ package org.ibi.appfacturas;
 import org.ibi.appfacturas.modelo.Cliente;
 import org.ibi.appfacturas.modelo.Factura;
 import org.ibi.appfacturas.modelo.ItemFactura;
-import org.ibi.appfacturas.modelo.Producto;
+import org.ibi.appfacturas.modelo.Producto; // Se puede optimizar utilizando wildcard *
 
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ public class EjemploFactura {
 
         System.out.println();
         // i = cantidad de productos
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < 2; i++){
             producto = new Producto();
             System.out.print("Ingrese producto nº: " + producto.getCodigo() + " ");
             nombre = scan.next();
@@ -34,7 +34,7 @@ public class EjemploFactura {
             precio = scan.nextFloat();
             producto.setPrecio(precio);
 
-            System.out.print("Ingrese la cantidad");
+            System.out.print("Ingrese la cantidad: ");
             cantidad = scan.nextInt();
 
             ItemFactura item = new ItemFactura(cantidad, producto);
@@ -42,7 +42,7 @@ public class EjemploFactura {
 
             System.out.println();
         }
-
-        System.out.println(factura.generarDetalle());
+        // factura.generarDetalle() o factura gracias al toString
+        System.out.println(factura);
     }
 }
