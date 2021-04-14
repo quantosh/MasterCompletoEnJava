@@ -4,6 +4,8 @@ import es.quantosh.pooherencia.*;
 
 public class EjemploHerencia {
     public static void main(String[] args) {
+
+        System.out.println("=== Creando la instancia objeto de alumno ===");
         Alumno alumno = new Alumno();
         alumno.setNombre("Ismael");
         alumno.setApellido("Barea");
@@ -11,6 +13,7 @@ public class EjemploHerencia {
         alumno.setNotaEntornos(5.6);
         alumno.setNotaProgramacion(7.2);
 
+        System.out.println("=== Creando la instancia objeto de AlumnoInternacional ===");
         AlumnoInternacional dave = new AlumnoInternacional();
         dave.setNombre("Dave");
         dave.setApellido("Stewart");
@@ -20,7 +23,7 @@ public class EjemploHerencia {
         dave.setNotaEntornos(6.2);
         dave.setNotaProgramacion(8.5);
 
-
+        System.out.println("=== Creando la instancia objeto de Profesor ===");
         Profesor profesor = new Profesor();
         profesor.setAsignatura("Programación");
         profesor.setNombre("José Luis");
@@ -28,6 +31,19 @@ public class EjemploHerencia {
 
         System.out.println("");
         System.out.println("Profesor "+profesor.getAsignatura() + " "
-        + profesor.getNombre() + " " + profesor.getApellido());
+                + profesor.getNombre() + " " + profesor.getApellido());
+
+        System.out.println(dave.getNombre()
+                + " " + dave.getApellido()
+                + " " + dave.getInstituto()
+                + " " + dave.getPais());
+
+        Class clase = dave.getClass();
+        while(clase.getSuperclass() != null){
+            String hija = clase.getName();
+            String padre = clase.getSuperclass().getName();
+            System.out.println(hija + "es una clase hija de la clase padre " + padre);
+            clase = clase.getSuperclass();
+        }
     }
 }
