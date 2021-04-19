@@ -1,4 +1,5 @@
 package es.quantosh.pooherencia;
+import es.quantosh.pooherencia.*;
 
 public class AlumnoInternacional extends Alumno {
     private String pais;
@@ -31,5 +32,10 @@ public class AlumnoInternacional extends Alumno {
 
     public void setNotaIdiomas(double notaIdiomas) {
         this.notaIdiomas = notaIdiomas;
+    }
+
+    @Override
+    public String saludar() {
+        return super.saludar() + " soy el estudiante de intercambio de " + getPais() + " y mi nombre es " + getNombre();
     }
 }

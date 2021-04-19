@@ -49,14 +49,21 @@ public class EjemploHerenciaConstructores {
 
             // Si es alumno internacional:
             if(persona instanceof AlumnoInternacional){
+                // tambien se podría guardar el cast en una variable AlumnoInternacional
+                AlumnoInternacional al = (AlumnoInternacional)persona;
+
                 System.out.println("\nImprimiendo los datos del tipo AlumnoInternacional");
-                System.out.println("Nota idiomas: " + ((AlumnoInternacional)persona).getNotaIdiomas());
-                System.out.println("Pais: " + ((AlumnoInternacional)persona).getPais());
+                System.out.println("Nota idiomas: " + al.getNotaIdiomas());
+                System.out.println("Pais: " + al.getPais());
             }
         }
         if(persona instanceof Profesor){
             System.out.println("Asignatura: "+ ((Profesor)persona).getAsignatura());
         }
+
+        // Sobreescritura de métodos en la herencia
+        System.out.println("===== Sobreescitura Saludar ====");
+        System.out.println(persona.saludar());
 
     }
 }

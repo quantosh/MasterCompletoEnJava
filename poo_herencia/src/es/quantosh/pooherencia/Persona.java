@@ -52,4 +52,8 @@ public class Persona {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String saludar(){
+        return "Hola que tal!";
+    }
 }

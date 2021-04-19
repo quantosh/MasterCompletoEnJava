@@ -1,4 +1,5 @@
 package es.quantosh.pooherencia;
+import es.quantosh.pooherencia.*;
 
 // Alumno es la clase hija de Persona
 public class Alumno extends Persona{
@@ -27,7 +28,7 @@ public class Alumno extends Persona{
         super(nombre, apellido, edad);
         this.instituto = instituto;
     }
-
+    
     public Alumno(){
         super();
         System.out.println("Alumno: inicializando constructor...");
@@ -53,5 +54,11 @@ public class Alumno extends Persona{
 
     public void setNotaProgramacion(double notaProgramacion) {
         this.notaProgramacion = notaProgramacion;
+    }
+
+    @Override
+    public String saludar() {
+        String saludar = super.saludar();
+        return saludar + " soy un alumno y mi nombre es:" + getNombre();
     }
 }
